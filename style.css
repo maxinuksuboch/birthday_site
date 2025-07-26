@@ -251,38 +251,41 @@ em {
 @media (max-width: 768px) {
   .block,
   .block.reverse {
-    flex-direction: column; /* Столбец */
+    flex-direction: column !important;
+    align-items: center;
     text-align: center;
-    padding: 20px 5%;
-    gap: 30px;
-    align-items: center; /* Центрируем все элементы */
+    gap: 20px;
   }
 
-  /* Убираем фиксированные отступы текста */
+  .image,
+  .video,
+  .video_horiz,
+  .circle-video,
   .text {
-    max-width: 90%;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 100% !important;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .text h2,
   .text p {
-    margin: 10px 0;
-    padding: 0;
+    margin: 10px 0 !important;
+    margin-left: 0 !important;
     text-align: center;
   }
 
-  /* Центрируем картинки и видео */
   .image img,
   .video video,
   .circle-video video,
   .video_horiz video {
+    width: 90% !important;
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    display: block;
     margin: 0 auto;
   }
 }
+
 
 
 
