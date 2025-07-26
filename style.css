@@ -57,7 +57,7 @@ body {
   flex-direction: row-reverse;
 }
 
-/* ИЗОБРАЖЕНИЯ */
+/* ИЗОБРАЖЕНИЯ И ВИДЕО */
 .image, .video, .video_horiz, .circle-video, .text {
   flex: 1;
   max-width: 50%;
@@ -89,10 +89,12 @@ body {
 .block:not(.reverse) .image img:hover,
 .block:not(.reverse) .video video:hover {
   transform: scale(1.05) rotate(-10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .block.reverse .image img:hover,
 .block.reverse .video video:hover {
   transform: scale(1.05) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ПОДПИСИ */
@@ -104,14 +106,17 @@ body {
 .text p {
   font-size: 1.1em;
   line-height: 1.8;
+  margin-top: 10px;
 }
 
-/* АНИМАЦИЯ ПРИ СКРОЛЛЕ */
+/* АНИМАЦИЯ НАКЛОНА */
 .rotate-left {
-  transform: rotate(-5deg) scale(1.02);
+  transform: rotate(-7deg) scale(1.02);
+  transition: transform 1s ease;
 }
 .rotate-right {
-  transform: rotate(5deg) scale(1.02);
+  transform: rotate(7deg) scale(1.02);
+  transition: transform 1s ease;
 }
 
 /* ФИНАЛ */
@@ -170,5 +175,27 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s ease;
+  }
+}
+
+/* Сердечки падают */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }

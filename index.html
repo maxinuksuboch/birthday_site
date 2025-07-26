@@ -218,15 +218,6 @@
       }
     });
   </script>
-<script>
-  if (window.innerWidth <= 768) {
-    const elements = document.querySelectorAll('.image img, .video video, .circle-video video, .video_horiz video');
-    elements.forEach((el, i) => {
-      const direction = i % 2 === 0 ? 'rotate-left' : 'rotate-right';
-      el.classList.add(direction);
-    });
-  }
-</script>
 
 </body>
 </html>
