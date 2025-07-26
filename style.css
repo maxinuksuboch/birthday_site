@@ -75,7 +75,7 @@ body {
 .image img {
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 600px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: block;
@@ -238,12 +238,12 @@ em {
 /* Автоматический поворот при скролле (мобильная версия) */
 .rotate-left {
   transform: rotate(-7deg) scale(1.02);
-  transition: transform 1s ease, box-shadow 0.4s ease;
+  transition: transform 1.5s ease, box-shadow 0.4s ease;
 }
 
 .rotate-right {
   transform: rotate(7deg) scale(1.02);
-  transition: transform 1s ease, box-shadow 0.4s ease;
+  transition: transform 1.5s ease, box-shadow 0.4s ease;
 }
 
 
@@ -277,7 +277,7 @@ em {
   .video video,
   .circle-video video,
   .video_horiz video {
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
     border-radius: 20px;
     margin: 0 auto;
