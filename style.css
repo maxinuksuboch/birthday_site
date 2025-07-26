@@ -249,26 +249,30 @@ em {
 
 /* Мобильная версия */
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
   .block,
   .block.reverse {
-    flex-direction: column;
+    flex-direction: column; /* Столбец */
     text-align: center;
     padding: 20px 5%;
     gap: 30px;
+    align-items: center; /* Центрируем все элементы */
   }
 
-  .image,
-  .video,
-  .video_horiz,
-  .circle-video,
+  /* Убираем фиксированные отступы текста */
   .text {
-    max-width: 100%;
-    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 0;
+    text-align: center;
   }
 
+  .text h2,
+  .text p {
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Центрируем картинки и видео */
   .image img,
   .video video,
   .circle-video video,
@@ -276,18 +280,9 @@ em {
     max-width: 100%;
     height: auto;
     border-radius: 20px;
-  }
-
-  .text h2,
-  .text p {
-    margin: 10px 0;
-    padding: 0 10px;
-    text-align: center;
-  }
-
-  .text {
-    margin-top: 10px;
+    margin: 0 auto;
   }
 }
 
-}
+
+
