@@ -119,15 +119,23 @@ body {
   background-color: #ffe6f0; /* Нежно-розовый */
 }
 
-.circle-video video {
+.circle-video {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  display: block;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.circle-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* убрать, не нужен */
+}
+
 
 .video_horiz video {
   width: 100%;
