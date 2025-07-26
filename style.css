@@ -1,6 +1,5 @@
-
 .site-header {
-  background-color: #ffffff;
+  background-color: #ffffff; /* нежно-розовый */
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -8,6 +7,27 @@
   top: 0;
   z-index: 1000;
 }
+
+.greeting {
+  padding: 10px 10% 40px;
+  background-color: #fffafc;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.greeting strong {
+  color: #e91e63;
+}
+
+.greeting em {
+  font-style: italic;
+  color: #c2185b;
+}
+
 
 .site-header h1 {
   margin: 0;
@@ -17,6 +37,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -24,6 +45,7 @@ body {
   color: #333;
 }
 
+/* Контейнер секции */
 .block {
   display: flex;
   flex-direction: row;
@@ -33,15 +55,19 @@ body {
   gap: 80px;
 }
 
+/* Поменять порядок блоков */
 .block.reverse {
   flex-direction: row-reverse;
+  
 }
 
+/* Блок картинки и текста */
 .image, .text {
   flex: 1;
   max-width: 50%;
 }
 
+/* Базовый стиль */
 .image img {
   width: 100%;
   height: auto;
@@ -53,15 +79,42 @@ body {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Картинка в обычном блоке — поворот влево */
+.block:not(.reverse) .image img:hover {
+  transform: scale(1.05) rotate(-10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Картинка в блоке reverse — поворот вправо */
+.block.reverse .image img:hover {
+  transform: scale(1.05) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок */
 .text h2 {
   font-size: 2em;
   color: #e91e63;
   margin-bottom: 20px;
+  margin-left: 115px;
 }
 
 .text p {
   font-size: 1.1em;
-  line-height: 1.8;
+  line-height: 1.8; /* увеличили межстрочный интервал */
+  margin-top: 10px; 
+  margin-left: 120px;
+}
+
+
+
+/* Чередование фона: белый и розовый */
+.block:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.block:nth-child(even) {
+  background-color: #ffe6f0; /* Нежно-розовый */
 }
 
 .circle-video video {
@@ -70,75 +123,92 @@ body {
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: block;
+}
+
+.video_horiz video {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 20px;
   margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
 }
 
-/* Мобильная версия */
-/* Мобильная версия для iPhone */
-@media (max-width: 768px) {
-  .block,
-  .block.reverse {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 5%;
-    gap: 25px;
-  }
 
-  .image, .video, .video_horiz, .circle-video, .text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
-  /* Центрируем и сжимаем картинки */
-  .image img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    margin: 0 auto;
-  }
-
-  /* Видео (вертикальные и горизонтальные) */
-  .video video,
-  .video_horiz video {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    border-radius: 20px;
-    margin: 0 auto;
-  }
-
-  /* Видео-круг */
-  .circle-video video {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  /* Текст по центру */
-  .text {
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .text h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-  }
-
-  .text p {
-    font-size: 1em;
-    line-height: 1.6;
-  }
+/* Чтобы ограничить высоту видео, если оно слишком вытягивает блок */
+.video video {
+  width: 250px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.block:not(.reverse) .video_horiz video:hover {
+  transform: scale(1.05) rotate(-10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.block.reverse .video video:hover {
+  transform: scale(1.05) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.block:not(.reverse) .video video:hover {
+  transform: scale(1.05) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.block.reverse .circle-video video:hover {
+  transform: scale(1.05) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Добавим ограничение по высоте родителя, если нужно */
+.block .image.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 500px; /* ограничение на высоту блока */
+}
+
+
+
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* чтобы не мешало нажатию */
+  overflow: hidden;
+  z-index: 9999; /* поверх всего */
+}
+
+.heart {
+  position: absolute;
+  top: -30px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
 
 .final-message {
   background-color: #fff0f5;
@@ -154,3 +224,65 @@ body {
 .final-message strong {
   color: #e91e63;
 }
+
+.final-message em {
+  color: #c2185b;
+  font-style: italic;
+}
+
+em {
+  color: #c2185b;
+  font-style: italic;
+}
+
+/* Автоматический поворот при скролле (мобильная версия) */
+.rotate-left {
+  transform: rotate(-7deg) scale(1.02);
+  transition: transform 1s ease, box-shadow 0.4s ease;
+}
+
+.rotate-right {
+  transform: rotate(7deg) scale(1.02);
+  transition: transform 1s ease, box-shadow 0.4s ease;
+}
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .block,
+  .block.reverse {
+    flex-direction: column; /* Столбец */
+    text-align: center;
+    padding: 20px 5%;
+    gap: 30px;
+    align-items: center; /* Центрируем все элементы */
+  }
+
+  /* Убираем фиксированные отступы текста */
+  .text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .text h2,
+  .text p {
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Центрируем картинки и видео */
+  .image img,
+  .video video,
+  .circle-video video,
+  .video_horiz video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+}
+
+
+
