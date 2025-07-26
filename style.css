@@ -55,7 +55,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 5%;
+  padding: 40px;
   gap: 10px;
 }
 
@@ -68,13 +68,13 @@ body {
 /* Блок картинки и текста */
 .image, .text {
   flex: 1;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 /* Базовый стиль */
 .image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 600px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -93,7 +93,6 @@ body {
   transform: scale(1.05) rotate(10deg);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Заголовок */
 .text h2 {
@@ -130,7 +129,6 @@ body {
   display: block;
 }
 
-
 .video_horiz video {
   width: 100%;
   height: 100%;
@@ -142,6 +140,8 @@ body {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: block;
 }
+
+
 
 /* Чтобы ограничить высоту видео, если оно слишком вытягивает блок */
 .video video {
@@ -277,7 +277,7 @@ em {
   .video video,
   .circle-video video,
   .video_horiz video {
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
     border-radius: 20px;
     margin: 0 auto;
