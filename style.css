@@ -75,7 +75,7 @@ body {
 .image img {
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 90%;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: block;
@@ -265,9 +265,15 @@ em {
     gap: 30px;
     align-items: center; /* Центрируем все элементы */
   }
-  .circle-video {
+
+   .circle-video video {
     width: 80vw;
     height: 80vw;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
   /* Убираем фиксированные отступы текста */
   .text {
