@@ -75,42 +75,70 @@ body {
 }
 
 /* Мобильная версия */
+/* Мобильная версия для iPhone */
 @media (max-width: 768px) {
   .block,
   .block.reverse {
+    display: flex;
     flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 20px 5%;
-    gap: 30px;
+    gap: 25px;
+  }
+
+  .image, .video, .video_horiz, .circle-video, .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
-  .image, .text {
-    max-width: 100% !important;
+  /* Центрируем и сжимаем картинки */
+  .image img {
     width: 100%;
-  }
-
-  .image img,
-  .circle-video video {
-    max-width: 90%;
-    height: auto;
-    margin: 0 auto;
+    max-width: 350px;
     border-radius: 20px;
-    display: block;
-  }
-
-  .text {
     margin: 0 auto;
-    padding: 0 10px;
-    text-align: center;
   }
 
-  .text h2,
+  /* Видео (вертикальные и горизонтальные) */
+  .video video,
+  .video_horiz video {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+  /* Видео-круг */
+  .circle-video video {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Текст по центру */
+  .text {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .text h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
   .text p {
-    margin-left: 0 !important;
-    padding: 0;
+    font-size: 1em;
+    line-height: 1.6;
   }
 }
+
 
 .final-message {
   background-color: #fff0f5;
