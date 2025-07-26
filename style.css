@@ -288,7 +288,7 @@ em {
   .video video,
   .circle-video video,
   .video_horiz video {
-    
+    max-width: 100%;
     height: auto;
     border-radius: 20px;
     margin: 0 auto;
